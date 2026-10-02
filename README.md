@@ -1,6 +1,6 @@
 # Vmse — Spatial Stereo Music Plugin for Minecraft
 
-**Vmse** (formerly DSMPMusic) is a music playback plugin for Minecraft 1.21.11 servers, built on Simple Voice Chat's `LocationalAudioChannel`. It delivers true stereo / 5.1 surround sound with dynamic source tracking, spatial acoustics, playlist looping, music regions, a golden-hoe sound-source tool, effect presets, and synced lyrics.
+**Vmse** is a music playback plugin for Minecraft 1.21.11 servers, built on Simple Voice Chat's `LocationalAudioChannel`. It delivers true stereo / 5.1 surround sound with dynamic source tracking, spatial acoustics, playlist looping, music regions, a golden-hoe sound-source tool, effect presets, and synced lyrics.
 
 ## Features
 
@@ -10,7 +10,7 @@
 - 🎵 **Effect Presets** — Viper / Dolby / 3D Surround / Bass Boost / Clear Voice (real-time DSP)
 - 🔧 **Golden Hoe** — right-click to place a sound source inside a region
 - 📝 **Lyrics** — mc_lyrics v1 JSON, per-word highlight, actionbar / title / bossbar / chat
-- 🔄 **Migration** — auto-migrates legacy DSMPMusic data, hot-reload safe
+- 🔄 **Migration** — auto-migrates legacy music data, hot-reload safe
 
 ## Dependencies
 
@@ -51,10 +51,10 @@ mvn -q -o clean package -DskipTests
 
 ## License
 
-MIT
+AGPL v3 — see [LICENSE](LICENSE)
 
 ---
 
 ## 中文版
 
-[📖 点击查看中文版描述](./_zh.md)
+[📖 点击查看中文版描述](./README_zhcn.md)
