@@ -1,0 +1,21 @@
+# 将本文件复制一份并改成音乐文件相同的名字
+# 例如: music/abc.mp3 -> word/abc.yml
+# 不要直接修改 template.yml
+
+# lyrics 中每一句歌词都需要 start, end, text
+# 时间单位为秒, 支持小数
+lyrics:
+  line1:
+    start: 5.00
+    end: 8.20
+    text: '&f第一句歌词'
+  line2:
+    start: 8.20
+    end: 11.60
+    text: '&f第二句歌词'
+
+# 前奏, 间奏, 尾奏不需要额外填写歌词
+# 只要对应时间范围没有 lyrics, 就会自动保持空白
+# 例如前奏 0-5 秒没有 lyrics, 就是 5 秒前奏空档
+# 间奏可以直接留空, 例如 32-38 秒没有 lyrics
+# 尾奏同理, 最后一句歌词结束后到歌曲结束就是尾奏空档

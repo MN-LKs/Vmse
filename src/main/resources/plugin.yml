@@ -1,0 +1,72 @@
+name: Vmse
+version: 2.0.0
+main: com.vmse.VmsePlugin
+api-version: '1.21'
+load: STARTUP
+author: Vmse
+website: https://www.sgnc.de5.net/
+description: Advanced spatial music plugin - stereo surround, music regions, playlists, hi-fi audio via Simple Voice Chat.
+depend:
+  - voicechat
+softdepend:
+  - voicemessages
+commands:
+  vmse:
+    description: Vmse main command
+    aliases: [vms, vmusic]
+    usage: /vmse <play|url|stop|download|reload|vmsg|pause|list|playlist|region|surround|hoe|confirm>
+permissions:
+  vmse.play.me:
+    description: Play local music for yourself
+    default: true
+  vmse.play.other:
+    description: Play local music for another player or everyone
+    default: op
+  vmse.url:
+    description: Play a remote URL
+    default: op
+  vmse.stop.me:
+    description: Stop your own music
+    default: true
+  vmse.stop.other:
+    description: Stop another player's or everyone's music
+    default: op
+  vmse.download:
+    description: Download remote music to the music folder
+    default: op
+  vmse.reload:
+    description: Reload Vmse configuration and language
+    default: op
+  vmse.vmsg:
+    description: Send a music message
+    default: true
+  vmse.pause:
+    description: Pause or resume your own music
+    default: true
+  vmse.pause.other:
+    description: Pause or resume another player's or everyone's music
+    default: op
+  vmse.list:
+    description: List local music files
+    default: true
+  vmse.surround:
+    description: Toggle surround audio for yourself (stereo/5.1 layouts)
+    default: true
+  vmse.surround.other:
+    description: Toggle surround audio for other players
+    default: op
+  vmse.playlist.use:
+    description: Use playlists (create/play your own)
+    default: true
+  vmse.playlist.admin:
+    description: Manage all playlists and play them server-wide
+    default: op
+  vmse.region:
+    description: Admin - create/manage music regions
+    default: op
+  vmse.hoe:
+    description: Get the golden hoe sound-source tool
+    default: op
+  vmse.confirm:
+    description: Confirm bandwidth-heavy commands in chat
+    default: true

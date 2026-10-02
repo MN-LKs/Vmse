@@ -1,0 +1,134 @@
+# Vmse 2.0.0 配置文件
+# 前身 DSMPMusic 1.x 的数据会在首次启动时自动迁移到 Vmse 文件夹
+
+# 语言文件名：默认中文 zh_CN，也可以改为 en_US
+language: zh_CN
+
+# 所有聊天消息的统一前缀
+prefix: '&8[&x&A&6&8&4&F&F&lᴠ&x&B&5&9&9&F&F&lᴍ&x&C&4&A&D&F&F&lꜱ&x&D&3&C&2&F&F&lᴇ&8] &f&l» &r'
+
+# 音乐文件夹，相对于 plugins/Vmse/
+music-folder: music
+
+# 网络下载临时文件夹
+cache-folder: cache
+
+# 歌词词库文件夹(旧版格式), 音乐 abc.mp3 对应 word/abc.yml
+word-folder: word
+
+# 新版歌词文件夹 (mc_lyrics v1 JSON 格式)
+lyrics-folder: lyrics
+
+# 歌单文件夹
+playlist-folder: playlists
+
+# 音乐区域存档
+region-file: regions.yml
+
+# 数据迁移：旧插件数据文件夹（DSMPMusic/dsmpmusic）自动迁移开关
+migration:
+  enabled: true
+  # 迁移完成后是否保留旧文件夹（false 会把旧文件夹改名 .migrated 备份）
+  keep-old: true
+
+network:
+  connect-timeout-ms: 8000
+  read-timeout-ms: 15000
+  # /vmse download 最大下载大小（MB）
+  max-download-mb: 50
+  # 下载内容安全校验（拒绝 HTML/网页伪装文件）
+  verify-content: true
+
+playback:
+  # 全局/区域播放前，加载完成后的等待秒数（避免惊吓玩家）
+  global-countdown-seconds: 3
+  # 播放音量 (0.0 ~ 2.0)
+  volume: 1.0
+  # 是否忽略 Simple Voice Chat 的群组隔离
+  bypass-group-isolation: true
+  # 普通播放允许的最大音乐时长（秒）
+  max-audio-seconds: 900
+  # 缓存解码后的 PCM 数据，加速重复播放（默认 true）
+  pcm-cache: true
+  # 缓存条数上限（防止内存膨胀）
+  pcm-cache-max: 12
+  # 解码线程池大小（0=自动按CPU核数）
+  decode-threads: 0
+  # 音乐加载完成后是否在经验栏上方显示倒计时
+  countdown-on-global: true
+  # 开始播放时显示歌曲信息（名称/作者/时长）
+  announce-on-start: true
+
+# ---- 音质强化 ----
+audio-quality:
+  # 解码采样率 (48000 / 44100)
+  sample-rate: 48000
+  # 默认质量档位: normal(标准) / high(高解析, 保留多声道)
+  default-quality: high
+  # 峰值限制器阈值 (0.0~1.0, 防止爆音削波)
+  limiter-threshold: 0.95
+  # 轻量响度归一化（避免不同歌曲音量差异过大, true 开启）
+  loudness-normalize: true
+  # 淡入淡出毫秒（播放开始/结束防爆音）
+  fade-in-ms: 20
+  fade-out-ms: 80
+
+# ---- 立体声 / 环绕声 ----
+surround:
+  # 玩家默认是否启用立体声（false 时用 /vmse surround 手动开启）
+  default-enabled: false
+  # 双声道声源间距（格, 玩家视角左右各约1格）
+  stereo-separation: 1.0
+  # 5.1 环绕半径（格, 围绕玩家分布）
+  surround-radius: 2.5
+  # 声源跟随玩家移动的刷新间隔 tick
+  follow-interval: 10
+  # 声源音量^2 衰减系数（值越大衰减越快）
+  distance-falloff: 1.0
+  # 环境反射：是否启用（模拟简易混响/反射增益）
+  reverb-sim: true
+  reverb-gain: 0.15
+  # 玩家扬声器不支持立体声时的回退：合并为单声源
+  fallback-to-mono: true
+
+# ---- 音乐区域 ----
+region:
+  # 默认区域播放音量
+  default-volume: 1.0
+  # 区域边界是否显示粒子提示 (circle 使用粒子绘制边界)
+  show-boundary: true
+  # 是否考虑建筑/方块引起的反射（基于方块遮挡的简易声学调整 0~1, 0=关闭）
+  acoustic-filter: 0.6
+  # 区域歌曲切换间隔（秒, 歌单循环时）
+  track-switch-gap: 2
+  # 区域内玩家自动获得立体声的默认阵型 (stereo / 5.1)
+  default-layout: stereo
+
+# 金锄头工具
+hoe-tool:
+  # 物品名
+  item-name: '&b声源锄 &7(音乐区域工具)'
+  # 右键提示声源创建
+  create-source-prompt: true
+
+# 歌词默认显示设置 (JSON 中 display 节点可按歌曲覆盖)
+lyrics-display:
+  mode: actionbar
+  default-color: '#FFFFFF'
+  highlight-color: '#FFD700'
+  per-word-highlight: false
+  fade-in-ms: 200
+  fade-out-ms: 200
+  bossbar-progress: true
+  chat-prefix: '&8[&b♪&8] &r'
+  # 修复：相邻两行歌词文本相同时，第二行仍会显示（避免"只显示一次后淡出"）
+  allow-duplicate-lines: true
+
+vmsg:
+  enabled: true
+  max-seconds: 600
+  display-target: "all"
+
+# ---- 音效预设 (每玩家独立, 播放时实时应用) ----
+effect:
+  default: off
