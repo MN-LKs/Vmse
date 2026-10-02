@@ -1,6 +1,6 @@
 # Vmse —— 基于 Simple Voice Chat 的立体声音乐插件
 
-Vmse（原 DSMPMusic）是一款面向 Minecraft 1.21.11 服务器的音乐播放插件，依托 Simple Voice Chat 的 `LocationalAudioChannel` 实现真立体声 / 5.1 环绕声播放，支持动态声源跟随、空间声学反射、歌单连播、音乐区域、金锄头声源工具、音效预设、歌词同步等功能。
+**Vmse**（前身 DSMPMusic）是一款面向 Minecraft 1.21.11 服务器的音乐播放插件，依托 Simple Voice Chat 的 `LocationalAudioChannel` 实现真立体声 / 5.1 环绕声播放，支持动态声源跟随、空间声学反射、歌单连播、音乐区域、金锄头声源工具、音效预设、歌词同步等功能。
 
 ## 功能特性
 
